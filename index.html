@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Encriptador</title>
+</head>
+<body>
+    <div class="header">
+        <img src="/Imagenes/Alura.png" alt="Logo Alura">
+        <h1 class="titulo">Código Secreto</h1>
+        <img src="/Imagenes/One.png" alt="Logo ORACLE_ONE">
+    </div>
+
+    <div class="main">
+        <div class="section1">
+            <section class="form box">
+                <form action="">
+                    <h2 for="input-texto">Solo letras minúsculas, sin acento</h2>
+                    <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Ingrese el texto aqui">
+                    <input class="btn" type="button" onclick="encriptar()" value="encriptar!" id="btn-encriptar">
+                    <input class="btn" onclick="desencriptar()" type="button"  value="desencriptar!" id="btn-desencriptar">
+                </form>
+            </section>
+        </div>
+
+        <div class="section1">
+            <section class="msg box">
+                <h2 id="">Mensaje encriptado:</h2>
+                <input class="text-input" type="text" id="msg"></input>
+                <input class="btn" type="button" value="copiar" id="btn-copy" onclick="botonCopiar()"> 
+                <input class="btn" type="button" value="Limpiar" id="btn-limpiar" onclick="botonLimpiar()"> 
+            </section>
+        </div>
+
+    </div>
+
+    <div class="footer">
+        
+        <p> Challenge no.1 ALURA LATAM</p>
+        <p>© Carreras Licia</p>
+        <p>Enero 2022</p>
+    </div>
+
+    <script src="script.js"></script>
+    
+
+</body>
+</html>
