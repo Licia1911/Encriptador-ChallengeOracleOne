@@ -19,14 +19,34 @@ No se permite acentuación de palabras
 */
 
 
+const texto = document.getElementById("input-texto");
 
+texto.addEventListener("input", function(){
+
+    event.preventDefault();
+    texto.value = texto.value.toLowerCase();
+});
 
 
 function encriptar(){
-    const texto = document.getElementById("input-texto").value.toLowerCase();
-    const textoEncriptado = texto.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
-    document.getElementById("msg").value = textoEncriptado;
-    document.getElementById("input-texto").value = " ";
+
+    var textoMinusculas = texto.value;
+    
+    for(j = 0; j < textoMinusculas.length; j++){
+
+        if(( textoMinusculas.charCodeAt(j) >= 97 ) && ( textoMinusculas.charCodeAt(j) <= 122 )){
+
+            var textoEncriptado = textoMinusculas.replace(/e/gi, "enter").replace(/i/gi, "imes").replace(/a/gi, "ai").replace(/o/gi, "ober").replace(/u/gi, "ufat");
+            document.getElementById("msg").value = textoEncriptado;
+            document.getElementById("input-texto").value = "";
+            break;
+        }else{
+            alert("El mensaje tiene algún caracter especial. Por favor, verificar.");
+            document.getElementById("input-texto").value = "";
+            break;
+
+        }
+    } 
 }
 
 function desencriptar(){
